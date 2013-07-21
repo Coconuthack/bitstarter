@@ -1,9 +1,7 @@
 var express = require('express');
-
-var app = express.createServer(express.logger());
-
-//read data from a file, copy it into a buffer, convert that into a string,
-var buffy = new buffer(fs.readFileSync("index.html"));//read data from a file
+var fs = require('fs');
+var app = express(express.logger());
+var buffy = fs.readFileSync("index.html");//reads and returns buffer for data in file 'index.html'
 var str = buffy.toString();
 
 app.get('/', function(request, response) {
