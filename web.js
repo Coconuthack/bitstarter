@@ -1,6 +1,7 @@
 var express = require('express');
 var fs = require('fs');
-var app = express(express.logger());
+var app = express.createServer(express.logger());
+
 var buffy = fs.readFileSync("index.html");//reads and returns buffer for data in file 'index.html'
 var str = buffy.toString();
 
