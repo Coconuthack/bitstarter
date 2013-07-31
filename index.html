@@ -4,15 +4,24 @@
     <meta charset="utf-8">
     <title>A bitstarter projects</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
 
+    <!-- Bootstrap & dependencies -->
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
+    <!-- CSS -->
     <style type="text/css">
       /* Large desktop */
-      @media (min-width: 1200px) { 
+      @media (min-width: 980px) {
+      padding-top: 60px; //make container go bottom of topbar
+      }
 
+      /* Landscape phones and down */
+      @media (max-width: 480px) { ... }
+
+      /* All form Factors */
+      /* Mainbody & Headdins */
       body {
-      padding-top: 20px;
       padding-bottom: 40px;
       }
       .container {
@@ -21,7 +30,9 @@
       p.lead {
       padding-top: 15px;
       }
-      .navigation, .pitch, .section1, .section2, .faq, .footer {
+
+      /*Video Pitch & Actions */
+      .pitch, .section1, .section2, .faq, .footer {
       padding: 10px 0px 10px 0px;
       }
       .video, .thermometer, .order, .social {
@@ -40,33 +51,47 @@
       }
       div.row {
       border: 1px solid;
-
       }
 
-      /* Portrait tablet to landscape and desktop */
-      @media (min-width: 768px) and (max-width: 979px) { ... }
+      /*Marketing Copy and Footer */
 
-      /* Landscape phone to portrait tablet */
-      @media (max-width: 767px) { ... }
 
-      /* Landscape phones and down */
-      @media (max-width: 480px) { ... }
 
       }
     </style>
   </head>
       <body>
+	<!-- Mobile friendly navbar (adapted form example)-->
+	<!-- http://twitter.github.io/bootstrap/examples/starter-template.html -->
+	<!-- Bootstrap responsive navbor - http://getbootstrap.com/2.3.2/components.html#navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="navbar-inner">
 	    <div class="container">
-	            <div class="row-fluid navigation">
-		      <div class="span2 logo">
-			YuKaroki
-		      </div>
-	              <div class="span6 blank">
-		      </div>
-	              <div class="span4 about">
-		         Raise the volume!
-		      </div>
-		    </div>
+
+	      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	      </button>
+	      <a class="brand" href="#">Bitstarter</a>
+
+	      <!-- Everything you want hidden at 940px or less, place within here -->
+	      <div class="nav-collapse collapse">
+		<ul class="nav">
+		  <li class="active"><a href="#">Home</a></li>
+		  <li><a href="#about">About</a></li>
+		  <li><a href="#contact">Contact</a></li>
+		</ul>
+	      </div><!-- /.nav-collapse -->
+
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Uses row-fluid inside containers to achieve resizable layout-->
+	<!-- blogs.endjin.com/2013/04/tips-for-implementing-responsive-designs-using-bootstrap/ -->
+	<!-- http://stackoverflow.com/a/12270322 -->
+	    <div class="container">
 		    <div class="row-fluid heading">
 		      <div class="span12">
 			<h1>Bitstart that Youtube Song Mixing App!</h1>
